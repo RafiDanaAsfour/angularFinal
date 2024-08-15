@@ -4,6 +4,7 @@ import { HedarComponent } from './components/hedar/hedar.component';
 import { SideMenuComponent } from './components/side-menu/side-menu.component';
 import { SideMenuItemComponent } from './components/side-menu-item/side-menu-item.component';
 import { AccountComponent } from './components/account/account.component';
+import {RouterLink, RouterLinkActive} from "@angular/router";
 
 
 
@@ -12,14 +13,16 @@ import { AccountComponent } from './components/account/account.component';
     HedarComponent,
     SideMenuComponent,
     SideMenuItemComponent,
-    AccountComponent
+    AccountComponent,
   ],
   exports: [
     HedarComponent,
     SideMenuComponent
   ],
   imports: [
-    CommonModule
+    CommonModule,
+    RouterLink,
+    RouterLinkActive
   ]
 })
 export class SharedModule { }

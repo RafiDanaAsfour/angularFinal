@@ -1,8 +1,17 @@
 <aside class="sidebar">
     <div class="logo">
-      <img src="logo.png" alt="Logo">
+      <img src="assets/logo.png" alt="Logo">
       <h2>TableTrek</h2>
     </div>
-  <app-side-menu></app-side-menu>
+  <nav class="menu">
+    <h4>MENU</h4>
+    <div >
+      <div *ngFor="let item of menuItems">
+        <app-side-menu-item [item]="item"></app-side-menu-item>
+      </div>
+    </div>
+  </nav>
+
+
 </aside>
 

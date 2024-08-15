@@ -1,0 +1,23 @@
+.main-container {
+  display: flex;
+  height: 100vh;
+}
+
+.sidebar {
+  width: 200px;
+  background-color: #D4D6D9;
+  padding: 20px;
+  box-shadow: 2px 0 5px rgba(0, 0, 0, 0.1);
+}
+
+.content-area {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+}
+
+.body-content {
+  flex: 1;
+  padding: 20px;
+  overflow-y: auto;
+}

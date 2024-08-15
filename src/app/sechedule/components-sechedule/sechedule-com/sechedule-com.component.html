@@ -1,0 +1,20 @@
+
+<div class="header">
+  <div class="tabs">
+    <button [ngClass]="{ 'active': activeTab === 'request' }" (click)="selectTab('request')">Request</button>
+    <button [ngClass]="{ 'active': activeTab === 'calendar' }" (click)="selectTab('calendar')">Calendar</button>
+    <button [ngClass]="{ 'active': activeTab === 'blocked-days' }" (click)="selectTab('blocked-days')">Blocked Days</button>
+  </div>
+</div>
+
+<div class="content">
+  <div *ngIf="activeTab === 'request'">
+    <app-request></app-request>
+  </div>
+  <div *ngIf="activeTab === 'calendar'">
+    <app-calendar></app-calendar>
+  </div>
+  <div *ngIf="activeTab === 'blocked-days'">
+    <app-blocked-days></app-blocked-days>
+  </div>
+</div>

@@ -4,10 +4,14 @@
   align-items: center;
   padding: 10px 20px;
   border-bottom: 1px solid #e0e0e0;
-}
 
+}
+.header-title{
+  font-size: 24px;
+  font-family: 'Inter', sans-serif;
+  color: #2F5A76;
+}
 .header-search input[type="text"] {
-  //width: 100%;
   padding-right: 35px;
   padding-left: 10px;
   border-radius: 50px;

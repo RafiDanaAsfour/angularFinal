@@ -1,5 +1,6 @@
-<ul>
-  <li><a href="#"> 1</a></li>
-  <li><a href="#"> 2</a></li>
-  <li><a href="#"> 3</a></li>
-</ul>
+<div [routerLink]="item.route" routerLinkActive="active">
+  <div class="item-container" [ngClass]="{ 'active': isActive}">
+    <img [src]="item.icon" [alt]="item.name + ' Icon'" class="item-icon"/>
+    <span class="item-name">{{ item.name }}</span>
+  </div>
+</div>

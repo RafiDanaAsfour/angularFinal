@@ -1,10 +1,10 @@
-.sidebar {
-  width: 250px;
-  background-color: #f8f9fa;
-  padding: 20px;
-  height: 100vh;
-  box-shadow: 2px 0 5px rgba(0, 0, 0, 0.1);
-}
+//.sidebar {
+//  width: 200px;
+//  background-color:#D4D6D9;
+//  padding: 20px;
+//  height: 100vh;
+//  box-shadow: 2px 0 5px rgba(0, 0, 0, 0.1);
+//}
 
 .logo {
   display: flex;
@@ -13,11 +13,23 @@
 }
 
 .logo img {
-  width: 40px;
-  height: 40px;
+  width: 20px;
+  height: 20px;
   margin-right: 10px;
 }
 .logo h2 {
   font-size: 24px;
-  color: #333;
+  font-family: 'Inter', sans-serif;
+  color: #2F5A76;
 }
+.menu h4 {
+  font-family: 'Inter', sans-serif;
+  margin-top: 50px;
+  margin-bottom: 20px;
+  font-size: 10px;
+  color: #666;
+}
+.a{
+  text-decoration: none;
+}
+
