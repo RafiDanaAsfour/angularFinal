@@ -1,0 +1,35 @@
+:host {
+  display: block;
+  margin: 10px 0;
+}
+
+.item-container {
+  display: flex;
+  align-items: center;
+  padding: 10px;
+  border-radius: 4px;
+  transition: background-color 0.3s ease;
+  cursor: pointer;
+  text-decoration: none;
+}
+
+.item-container:hover {
+  background-color: #e9ecef;
+}
+.item-container:active {
+  background-color: #2F5A76;
+
+}
+
+.item-icon {
+  width: 24px;
+  height: 24px;
+  margin-right: 10px;
+}
+
+.item-name {
+  font-family: 'Inter', sans-serif;
+  font-size: 16px;
+  color: #2F5A76;
+
+}

@@ -1,0 +1,29 @@
+.header {
+
+  padding: 20px;
+  border-bottom: 1px solid #e0e0e0;
+  margin-bottom: 20px;
+}
+
+.tabs {
+  display: flex;
+}
+
+.tabs button {
+  background: none;
+  border: none;
+  padding: 10px 20px;
+  cursor: pointer;
+  font-size: 16px;
+  color: #2F5A76;
+  border-bottom: 3px solid transparent;
+}
+
+.tabs button.active {
+  border-bottom: 3px solid #2F5A76;
+  font-weight: bold;
+}
+
+
+
+
