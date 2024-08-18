@@ -1,1 +1,55 @@
-<p>request works!</p>
+<div class="header">
+  <div class="left-section">
+    <button [ngClass]="{ 'active': activeTab === 'all-location' }" (click)="selectTab('all-location')">
+      <img src="assets/down-arrow.png" alt="Dropdown icon" class="icon"/>
+      All Location
+    </button>
+    <button [ngClass]="{ 'active': activeTab === 'sort' }" (click)="selectTab('sort')">
+      <img src="assets/filter.png" alt="Sort icon" class="icon"/>
+      Sort
+    </button>
+  </div>
+
+  <button class="add-time-off-button" (click)="selectTab('add-time-off')">
+    <img src="assets/plus-sign.png" alt="Plus icon" class="icon"/>
+    Add time off
+  </button>
+</div>
+
+<div class="content">
+  <div *ngIf="activeTab === 'all-location'">
+    <app-all-location></app-all-location>
+
+
+  </div>
+  <div *ngIf="activeTab === 'sort'">
+    <app-sort></app-sort>
+  </div>
+  <div *ngIf="activeTab === 'add-time-off'">
+    <app-add-time-off></app-add-time-off>
+  </div>
+</div>
+<!--<div class="container">-->
+<!--  <div class="box">-->
+<!--    <app-supercool></app-supercool>-->
+<!--  </div>-->
+<!--  <div class="box">-->
+<!--    <app-guy-hawkins></app-guy-hawkins>-->
+<!--  </div>-->
+<!--  <div class="box">-->
+<!--    <app-ronald-richards></app-ronald-richards>-->
+<!--  </div>-->
+
+<!--</div>-->
+<div class="container">
+  <div class="box" *ngFor="let comp of components">
+    <ng-container [ngSwitch]="comp.component">
+      <app-supercool *ngSwitchCase="'SupercoolComponent'" [userData]="comp.data"></app-supercool>
+      <app-guy-hawkins *ngSwitchCase="'GuyHawkinsComponent'" [userData]="comp.data"></app-guy-hawkins>
+      <app-ronald-richards *ngSwitchCase="'RonaldRichardsComponent'" [userData]="comp.data"></app-ronald-richards>
+    </ng-container>
+  </div>
+</div>
+
+
+

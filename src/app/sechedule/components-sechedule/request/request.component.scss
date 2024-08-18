@@ -1,0 +1,75 @@
+body {
+  font-family: 'Roboto', sans-serif;
+  flex-wrap: wrap; /* يسمح للصناديق بالانتقال إلى السطر التالي إذا لم يكن هناك مساحة كافية */
+  gap: 10px; /* المسافة بين الصناديق */
+  padding: 20px; /* حشو حول الصناديق */
+  box-sizing: border-box; /* يشمل الحشوة في حساب العرض */
+}
+.header {
+  background-color: #fff;
+  padding: 20px;
+  border-bottom: 1px solid #e0e0e0;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+
+}
+
+.left-section {
+  display: flex;
+  gap: 10px;
+}
+
+.left-section button {
+  background-color: #f8f9fa;
+  border: 1px solid #ddd;
+  padding: 10px 15px;
+  cursor: pointer;
+  font-size: 14px;
+  color: #6c757d;
+  border-radius: 50px;
+  display: flex;
+  align-items: center;
+  gap: 5px;
+}
+
+.left-section button:hover {
+  background-color: #cccccc;
+}
+
+
+.add-time-off-button {
+  background-color: #2F5A76;
+  color: #fff;
+  padding: 10px 25px;
+  border-radius: 50px;
+  font-size: 14px;
+  font-weight: 500;
+  display: flex;
+  align-items: center;
+  gap: 5px;
+  border: none;
+  cursor: pointer;
+}
+
+.add-time-off-button:hover {
+  background-color: #cccccc ;
+}
+
+
+.icon {
+  width: 16px;
+  height: 16px;
+}
+
+
+.container {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.box {
+  margin:40px;
+  min-width: 150px;
+
+}
