@@ -1,9 +1,9 @@
 <div class="supercool-card">
   <div class="supercool-header">
-    <img src="assets/girl.png" alt="Supercool" class="supercool-image">
+    <img [src]="userData.imgSrc" [alt]="userData.name" class="supercool-image">
     <div class="supercool-header-details">
-      <h3 class="supercool-name">Supercool</h3>
-      <p class="supercool-by">By: Nadia C</p>
+      <h3 class="supercool-name">{{ userData.name }}</h3>
+      <p class="supercool-by">By: {{ userData.by }}</p>
     </div>
     <button class="supercool-options">
       <img src="assets/share.png" alt="Options icon">
@@ -12,26 +12,25 @@
   <div class="supercool-body">
     <div class="supercool-row">
       <p>Date submitted</p>
-      <span>Oct 4, 2023</span>
+      <span>{{ userData.dateSubmitted }}</span>
     </div>
     <div class="supercool-row">
       <p>Category</p>
-      <span>Unpaid Time Off</span>
+      <span>{{ userData.category }}</span>
     </div>
     <div class="supercool-row">
       <p>Time of requested</p>
-      <span>Oct 01, 2023 - 12:15am</span>
+      <span>{{ userData.timeRequested }}</span>
     </div>
     <div class="supercool-row">
       <p>Status</p>
       <span class="status-approved">
-
         <button class="status-button">
-          <img src="assets/Green_icon.svg.png" alt="point" class="point-img">
-          Approved</button>
-
+          <img [src]="userData.statusIcon" alt="point" class="point-img">
+          {{ userData.status }}
+        </button>
       </span>
     </div>
-
   </div>
 </div>
+

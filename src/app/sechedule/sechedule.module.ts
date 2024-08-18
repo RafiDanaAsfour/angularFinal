@@ -8,9 +8,9 @@ import { BlockedDaysComponent } from './components-sechedule/blocked-days/blocke
 import { AllLocationComponent } from './components-sechedule/request/all-location/all-location.component';
 import { SortComponent } from './components-sechedule/request/sort/sort.component';
 import { AddTimeOffComponent } from './components-sechedule/request/add-time-off/add-time-off.component';
-import {SupercoolComponent} from "./components-sechedule/request/supercool/supercool.component";
-import {GuyHawkinsComponent} from "./components-sechedule/request/guy-hawkins/guy-hawkins.component";
-import {RonaldRichardsComponent} from "./components-sechedule/request/ronald-richards/ronald-richards.component";
+
+import {UserCardComponent} from "./components-sechedule/request/user-card/user-card.component";
+import {FormsModule} from "@angular/forms";
 
 @NgModule({
   declarations: [
@@ -21,13 +21,12 @@ import {RonaldRichardsComponent} from "./components-sechedule/request/ronald-ric
     AllLocationComponent,
     SortComponent,
     AddTimeOffComponent,
-    SupercoolComponent,
-    GuyHawkinsComponent,
-    RonaldRichardsComponent
+    UserCardComponent
   ],
   imports: [
     CommonModule,
     SecheduleRoutingModule,
+    FormsModule,
   ]
 
 
