@@ -1,0 +1,20 @@
+.loader {
+  font-family: 'Roboto', sans-serif;
+  position: fixed;
+  top: 70%;
+  left: 50%;
+  font-size: 20px;
+  color:  #2F5A76;
+  z-index: 1000;
+}
+
+.loader::before {
+  content: '⏳';
+  display: inline-block;
+  animation: spin 1s linear infinite;
+}
+//عشان تلفلف ساعة الرملية
+@keyframes spin {
+  0% { transform: rotate(0deg); }
+  100% { transform: rotate(360deg); }
+}

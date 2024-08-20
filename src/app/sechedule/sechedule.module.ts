@@ -11,6 +11,9 @@ import { AddTimeOffComponent } from './components-sechedule/request/add-time-off
 
 import {UserCardComponent} from "./components-sechedule/request/user-card/user-card.component";
 import {FormsModule} from "@angular/forms";
+import {LoaderComponent} from "./services/loader/loader.component";
+
+import {PaginationComponent} from "./components-sechedule/request/pagination/pagination.component";
 
 @NgModule({
   declarations: [
@@ -21,12 +24,16 @@ import {FormsModule} from "@angular/forms";
     AllLocationComponent,
     SortComponent,
     AddTimeOffComponent,
-    UserCardComponent
+    UserCardComponent,
+    LoaderComponent,
+    PaginationComponent
   ],
   imports: [
     CommonModule,
     SecheduleRoutingModule,
-    FormsModule,
+    FormsModule
+
+
   ]
 
 

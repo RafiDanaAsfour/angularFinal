@@ -1,10 +1,11 @@
+
 <div class="header">
   <div class="left-section">
-    <button [ngClass]="{ 'active': activeTab === 'all-location' }" (click)="selectTab('all-location')">
+    <button (click)="selectTab('all-location')">
       <img src="assets/down-arrow.png" alt="Dropdown icon" class="icon"/>
       All Location
     </button>
-    <button [ngClass]="{ 'active': activeTab === 'sort' }" (click)="selectTab('sort')">
+    <button (click)="selectTab('sort')">
       <img src="assets/filter.png" alt="Sort icon" class="icon"/>
       Sort
     </button>
@@ -13,8 +14,38 @@
   <button class="add-time-off-button" (click)="selectTab('add-time-off')">
     + Add time off
   </button>
+</div>
 
+<div class="body-content">
+  <app-loader *ngIf="loading"></app-loader>
 
+  <app-add-time-off
+    *ngIf="showAddTimeOffModal"
+    (timeOffAdded)="handleTimeOffAdded($event)">
+  </app-add-time-off>
+
+ <div class="pagination-container">
+    <div class="container">
+      <!--      | slice:(currentPage - 1) * 5:currentPage * 5-->
+    <app-user-card
+      class="box"
+
+      *ngFor="let user of timeOff "
+
+      [userData]="user"
+
+    ></app-user-card>
+    </div>
+   <div class="pagination">
+     <pagination
+       [currentPage]="currentPage"
+       [limit]="pageSize"
+       [total]="100"
+       (changePage)="changePage($event)">
+
+     </pagination>
+   </div>
+</div>
 </div>
 
 <div class="content">
@@ -24,17 +55,4 @@
   <div *ngIf="activeTab === 'sort'">
     <app-sort></app-sort>
   </div>
-  <div *ngIf="activeTab === 'add-time-off'">
-    <app-add-time-off></app-add-time-off>
-  </div>
 </div>
-
-
-<div class="container">
-  <app-user-card class="box"
-    *ngFor="let user of users"
-    [userData]="user">
-  </app-user-card>
-</div>
-
-
