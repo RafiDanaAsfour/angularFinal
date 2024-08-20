@@ -1,0 +1,25 @@
+<nav class="pagination">
+  <div
+    class="page-item"
+    (click)="changeCurrentPage(currentPage - 1)"
+    [ngClass]="{ disabled: currentPage === 1 }"
+  >
+    <span class="page-link">Prev</span>
+  </div>
+
+  <div
+    *ngFor="let page of displayedPages"
+    [ngClass]="{ 'page-item': true, active: currentPage === page }"
+    (click)="changeCurrentPage(page)"
+  >
+    <span class="page-link">{{ page+1 }}</span>
+  </div>
+
+  <div
+    class="page-item"
+    (click)="changeCurrentPage(currentPage + 1)"
+    [ngClass]="{ disabled: currentPage === pages.length }"
+  >
+    <span class="page-link">Next</span>
+  </div>
+</nav>
