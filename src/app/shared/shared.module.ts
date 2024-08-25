@@ -6,6 +6,9 @@ import { SideMenuItemComponent } from './components/side-menu-item/side-menu-ite
 import { AccountComponent } from './components/account/account.component';
 import {RouterLink, RouterLinkActive} from "@angular/router";
 
+import { ReactiveFormsModule } from '@angular/forms';
+import {LoaderComponent} from "./loader/loader.component";
+
 
 
 @NgModule({
@@ -14,15 +17,19 @@ import {RouterLink, RouterLinkActive} from "@angular/router";
     SideMenuComponent,
     SideMenuItemComponent,
     AccountComponent,
+    LoaderComponent
   ],
   exports: [
     HedarComponent,
-    SideMenuComponent
+    SideMenuComponent,
+    LoaderComponent
   ],
   imports: [
     CommonModule,
     RouterLink,
-    RouterLinkActive
+    RouterLinkActive,
+    ReactiveFormsModule
+
   ]
 })
 export class SharedModule { }

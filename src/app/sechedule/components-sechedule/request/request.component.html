@@ -19,33 +19,37 @@
 <div class="body-content">
   <app-loader *ngIf="loading"></app-loader>
 
+<!--  <app-add-time-off-->
+<!--    *ngIf="showAddTimeOffModal"-->
+<!--    (timeOffAdded)="handleTimeOffAdded($event)">-->
+<!--  </app-add-time-off>-->
   <app-add-time-off
     *ngIf="showAddTimeOffModal"
-    (timeOffAdded)="handleTimeOffAdded($event)">
+    [existingTimeOff]="selectedTimeOff"
+  (timeOffAdded)="handleTimeOffAdded($event)">
   </app-add-time-off>
 
- <div class="pagination-container">
+  <div class="pagination-container">
     <div class="container">
-      <!--      | slice:(currentPage - 1) * 5:currentPage * 5-->
-    <app-user-card
-      class="box"
+      <app-user-card
+        class="box"
+        *ngFor="let user of timeOff"
+        [userData]="user"
+        (editCard)="initData($event)"
+        (deleteCard)="handleDeleteTimeOff($event)">
+      </app-user-card>
 
-      *ngFor="let user of timeOff "
-
-      [userData]="user"
-
-    ></app-user-card>
     </div>
-   <div class="pagination">
-     <pagination
-       [currentPage]="currentPage"
-       [limit]="pageSize"
-       [total]="100"
-       (changePage)="changePage($event)">
+    <div class="pagination">
+      <pagination
+        [currentPage]="currentPage"
+        [limit]="pageSize"
+        [total]="100"
+        (changePage)="changePage($event)">
 
-     </pagination>
-   </div>
-</div>
+      </pagination>
+    </div>
+  </div>
 </div>
 
 <div class="content">

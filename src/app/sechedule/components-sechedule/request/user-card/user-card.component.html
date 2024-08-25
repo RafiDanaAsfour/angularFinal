@@ -5,9 +5,15 @@
       <h3 class="supercool-name">{{ userData.name }}</h3>
       <p class="supercool-by">By: {{ userData.by }}</p>
     </div>
-    <button class="supercool-options">
-      <img src="assets/share.png" alt="Options icon">
-    </button>
+    <div class="dropdown">
+      <button class="supercool-options dropdown-toggle">
+        <img src="assets/share.png" alt="Options icon">
+      </button>
+      <div class="dropdown-content">
+        <div class="dropdown-item" (click)="onEdit()">Edit</div>
+        <div class="dropdown-item" (click)="onDelete()">Delete</div>
+      </div>
+    </div>
   </div>
   <div class="supercool-body">
     <div class="supercool-row">
@@ -33,4 +39,13 @@
     </div>
   </div>
 </div>
-
+<!--<app-add-time-off-->
+<!--  *ngIf="showAddTimeOffModal"-->
+<!--  [existingTimeOff]="selectedTimeOff"-->
+<!--  (timeOffAdded)="handleEditTimeOff($event)">-->
+<!--</app-add-time-off>-->
+<app-add-time-off
+  *ngIf="showAddTimeOffModal"
+  [existingTimeOff]="userData"
+  (timeOffAdded)="handleEditTimeOff($event)">
+</app-add-time-off>

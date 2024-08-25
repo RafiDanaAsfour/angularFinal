@@ -10,10 +10,11 @@ import { SortComponent } from './components-sechedule/request/sort/sort.componen
 import { AddTimeOffComponent } from './components-sechedule/request/add-time-off/add-time-off.component';
 
 import {UserCardComponent} from "./components-sechedule/request/user-card/user-card.component";
-import {FormsModule} from "@angular/forms";
-import {LoaderComponent} from "./services/loader/loader.component";
+import {FormsModule, ReactiveFormsModule} from "@angular/forms";
+
 
 import {PaginationComponent} from "./components-sechedule/request/pagination/pagination.component";
+import {SharedModule} from "../shared/shared.module";
 
 @NgModule({
   declarations: [
@@ -25,13 +26,14 @@ import {PaginationComponent} from "./components-sechedule/request/pagination/pag
     SortComponent,
     AddTimeOffComponent,
     UserCardComponent,
-    LoaderComponent,
     PaginationComponent
   ],
   imports: [
     CommonModule,
     SecheduleRoutingModule,
-    FormsModule
+    FormsModule,
+    ReactiveFormsModule,
+    SharedModule
 
 
   ]

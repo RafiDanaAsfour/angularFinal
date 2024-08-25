@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import {Component, Input, OnInit} from '@angular/core';
 import { UserService } from '../../services/user.service';
 
 @Component({
@@ -7,6 +7,7 @@ import { UserService } from '../../services/user.service';
   styleUrls: ['./request.component.scss']
 })
 export class RequestComponent implements OnInit {
+
   activeTab: string = '';
   timeOff: any[] = [];
   loading: boolean = true;
@@ -15,7 +16,10 @@ export class RequestComponent implements OnInit {
   currentPage = 0;
   pageSize = 5;
   totalRecords=0;
+  //
+  selectedTimeOff: any = null;
 
+  //
   changePage(page: number): void {
     this.currentPage = page;
     this.initData();
@@ -27,7 +31,7 @@ export class RequestComponent implements OnInit {
     this.initData()
 
   }
-  initData(){
+  initData($event?: any){
     this.loading = true;
     const params = {
       page: this.currentPage,
@@ -57,10 +61,25 @@ export class RequestComponent implements OnInit {
     this.showAddTimeOffModal = false;
   }
 
-  handleTimeOffAdded(newTimeOff: any) {
 
+  private deletedTimeOff: any;
+
+
+  handleDeleteTimeOff(editedTimeOff: any) {
+
+      const index = this.timeOff.findIndex(t => t.id === this.deletedTimeOff.id);
+      if (index !== -1) {
+        this.timeOff.splice(index, 1);
+      }
+
+
+  }
+
+  handleTimeOffAdded(updatedTimeOff: any) {
     this.initData();
-    this.showAddTimeOffModal= false
     this.closeModal();
   }
+
+
+
 }

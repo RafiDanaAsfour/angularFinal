@@ -2,7 +2,12 @@
   display: flex;
   height: 100vh;
 }
-
+.login-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+}
 .sidebar {
   width: 200px;
   background-color: #D4D6D9;
